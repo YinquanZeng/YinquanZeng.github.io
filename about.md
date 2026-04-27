@@ -1,7 +1,7 @@
 ---
-layout: page  
-title: "about"  
-permalink: /about/contact/  
+layout: default
+title: "About Me"
+permalink: /about/
 ---
 
-**hello world, I'm Yinquan**
+hello world, I'm Yinquan
