@@ -1,8 +1,7 @@
 ---
 layout: post  
 title: "Test blog"  
----
-date: YYYY-MM-DD hh:mm:ss -0000  
+date: 2026-04-25 01:01:01 -0000  
 categories: CATEGORY-1 CATEGORY-2  
 
 
