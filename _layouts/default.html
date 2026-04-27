@@ -31,7 +31,7 @@
       box-sizing: border-box;
     }
     body {
-      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", monospace;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.8;
@@ -80,37 +80,50 @@
       border-radius: 12px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     }
-    h1, h2, h3 {
+
+    /* 👇👇👇 关键修复：Markdown 标题样式 👇👇👇 */
+    .markdown-content h1 {
+      font-size: 2em;
+      margin: 1.2em 0 0.8em;
       color: var(--title-color);
-      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .markdown-content h2 {
+      font-size: 1.6em;
+      margin: 1.1em 0 0.7em;
+      color: var(--title-color);
       font-weight: 600;
     }
-    p {
-      margin-bottom: 1rem;
+    .markdown-content h3 {
+      font-size: 1.35em;
+      margin: 1em 0 0.6em;
+      color: var(--title-color);
     }
-    ul {
-      padding-left: 1.6rem;
-      margin-bottom: 1rem;
+    .markdown-content p {
+      margin-bottom: 1em;
+      line-height: 1.8;
     }
-    a {
+    .markdown-content ul,
+    .markdown-content ol {
+      margin-left: 1.6em;
+      margin-bottom: 1em;
+    }
+    .markdown-content li {
+      margin-bottom: 0.5em;
+    }
+    .markdown-content a {
       color: var(--link-color);
-      text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-    hr {
+    .markdown-content hr {
       border: 0;
       height: 1px;
       background: var(--border-color);
-      margin: 1.8rem 0;
+      margin: 1.8em 0;
     }
-    footer {
-      margin-top: 3rem;
-      text-align: center;
-      color: var(--muted-color);
-      font-size: 0.9rem;
+    .markdown-content strong {
+      color: var(--title-color);
     }
+
     pre, code {
       background: rgba(0,0,0,0.15);
       border-radius: 4px;
@@ -119,6 +132,13 @@
     [data-theme="light"] pre,
     [data-theme="light"] code {
       background: #f1f1f1;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: var(--muted-color);
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -132,7 +152,8 @@
       <button id="themeBtn">🌓 切换主题</button>
     </nav>
 
-    <div class="card">
+    <!-- 👇👇👇 关键修复：给内容加 markdown 样式类 👇👇👇 -->
+    <div class="card markdown-content">
       {{ content }}
     </div>
 
@@ -142,7 +163,6 @@
   </div>
 
   <script>
-    // 读取本地缓存主题
     const btn = document.getElementById('themeBtn');
     const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
     let theme = localStorage.getItem('theme') || (darkMode ? 'dark' : 'light');
