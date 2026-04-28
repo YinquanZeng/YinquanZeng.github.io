@@ -142,6 +142,7 @@
     }
 
     /* 分级下拉菜单 */
+    /* 分级下拉导航 修复版｜无缝不丢失 */
     .dropdown {
       position: relative;
       display: inline-block;
@@ -154,17 +155,22 @@
       font-weight: 500;
       cursor: pointer;
       font-family: inherit;
+      padding: 6px 8px;
+      margin: 0;
     }
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 140%;
+      /* 关键：紧贴按钮，无空隙 */
+      top: 100%;
       left: 0;
       background-color: var(--card-bg);
       min-width: 160px;
       border-radius: 6px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       z-index: 999;
+      /* 补上透明缓冲区域，防止断触 */
+      padding-top: 8px;
     }
     .dropdown-content a {
       display: block;
@@ -175,6 +181,7 @@
     .dropdown-content a:hover {
       background: var(--border-color);
     }
+    /* hover 联动：容器+按钮同时监听，完全不断连 */
     .dropdown:hover .dropdown-content {
       display: block;
     }
