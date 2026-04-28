@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 学习笔记
+title: 笔记 | Note
 permalink: /category/note/
 ---
 
