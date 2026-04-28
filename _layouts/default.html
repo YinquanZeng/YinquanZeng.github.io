@@ -145,18 +145,25 @@
 <body>
   <div class="container">
     <nav>
+      
       <div class="nav-links">
-
         <a href="/">首页</a>
-        <a href="/category/tech/">技术</a>
-        <a href="/category/tech/compiler/">编译器</a>
-        <a href="/category/tech/ai/">AI</a>
+        <!-- 分级导航：技术 -->
+        <div class="dropdown">
+          <button class="dropbtn">技术 ▾</button>
+          <div class="dropdown-content">
+            <a href="/category/tech/">技术总览</a>
+            <a href="/category/tech/compiler/">编译器</a>
+            <a href="/category/tech/ai/">AI</a>
+          </div>
+        </div>
+      
         <a href="/category/life/">生活</a>
         <a href="/category/note/">笔记</a>
         <a href="/tags/list/">标签</a>
         <a href="/about/">关于</a>
-
       </div>
+      
       <button id="themeBtn">🌓 切换主题</button>
     </nav>
 
