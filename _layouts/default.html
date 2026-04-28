@@ -140,6 +140,45 @@
       color: var(--muted-color);
       font-size: 0.9rem;
     }
+
+    /* 分级下拉菜单 */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      background: transparent;
+      color: var(--text-color);
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 140%;
+      left: 0;
+      background-color: var(--card-bg);
+      min-width: 160px;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 8px 16px;
+      color: var(--text-color) !important;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: var(--border-color);
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
   </style>
 </head>
 <body>
