@@ -1,10 +1,10 @@
 ---
 layout: default
-title: 技术文章
+title: 技术 | Tech
 permalink: /category/tech/
 ---
 
-# 技术文章
+# 技术 专栏
 <hr>
 
 {% for post in site.categories.tech %}
