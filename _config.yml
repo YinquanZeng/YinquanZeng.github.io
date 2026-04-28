@@ -1,11 +1,11 @@
-# theme: jekyll-theme-minimal
-# title: Yinquan's homepage
-# description: Bookmark this to keep an eye on my project updates!!!
-
-title: Yinquan's homepage
-description: Bookmark this to keep an eye on my project updates!!!
-baseurl: ""
+title: Yinquan's Blog
+description: 技术博客
 url: "https://yinquanzeng.github.io"
+baseurl: ""
 
 markdown: kramdown
-permalink: /:year/:month/:day/:title
+permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
